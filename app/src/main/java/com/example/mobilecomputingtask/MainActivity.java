@@ -5,11 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     TextView textView;
+    EditText editText;
     Button firstButton;
     Button secondButton;
     @Override
@@ -20,14 +22,30 @@ public class MainActivity extends AppCompatActivity {
         firstButton = findViewById(R.id.firstButton);
         secondButton = findViewById(R.id.secondButton);
 
+        firstButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                changeFirst();
+            }
+        });
+
+        secondButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                changeSecond();
+            }
+        });
+
+        editText = findViewById(R.id.editTextTextPersonName3);
         textView = findViewById(R.id.textView);
     }
 
-    public void changeFirst(View view) {
-        textView.setText("First Button Click");
+    private void changeFirst() {
+        textView.setText(editText.getText().toString());
     }
 
-    public void changeSecond(View view) {
-        textView.setText("Second Button Click");
+    private void changeSecond() {
+        textView.setText("");
+        editText.setText("");
     }
 }

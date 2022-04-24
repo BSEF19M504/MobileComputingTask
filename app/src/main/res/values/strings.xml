@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">MobileComputingTask</string>
+    <string name="first_application">Dummy Text</string>
+    <string name="first">Apply</string>
+    <string name="second">Clear</string>
+    <string name="login_id">Login ID</string>
+    <string name="password">Password</string>
+    <string name="todo">TODO</string>
+    <string name="cancel">Cancel</string>
+    <string name="login">Login</string>
+    <string name="enter_text">Enter Text</string>
 </resources>
