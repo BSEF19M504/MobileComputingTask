@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextView textView;
     EditText editText;
@@ -22,19 +22,9 @@ public class MainActivity extends AppCompatActivity {
         firstButton = findViewById(R.id.firstButton);
         secondButton = findViewById(R.id.secondButton);
 
-        firstButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                changeFirst();
-            }
-        });
+        firstButton.setOnClickListener(this);
 
-        secondButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                changeSecond();
-            }
-        });
+        secondButton.setOnClickListener(this);
 
         editText = findViewById(R.id.editTextTextPersonName3);
         textView = findViewById(R.id.textView);
@@ -47,5 +37,17 @@ public class MainActivity extends AppCompatActivity {
     private void changeSecond() {
         textView.setText("");
         editText.setText("");
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.firstButton:
+                changeFirst();
+                break;
+            case R.id.secondButton:
+                changeSecond();
+                break;
+        }
     }
 }
