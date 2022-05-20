@@ -16,13 +16,10 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
         Intent intent = getIntent();
         String entry = intent.getStringExtra("char");
-        char alphabet = entry.charAt(0);
+        char alphabet = entry==null?'-':entry.charAt(0);
         imageView = findViewById(R.id.imageView);
         imageView1 = findViewById(R.id.imageView1);
         imageView2 = findViewById(R.id.imageView2);
-        imageView.setImageResource(R.drawable.a1);
-        imageView1.setImageResource(R.drawable.a2);
-        imageView2.setImageResource(R.drawable.a3);
 
         switch (alphabet){
             case 'a':
