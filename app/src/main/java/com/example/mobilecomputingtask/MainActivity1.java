@@ -33,7 +33,7 @@ public class MainActivity1 extends AppCompatActivity implements View.OnClickList
                 intent = new Intent(this,MainActivity.class);
                 break;
             case R.id.quiz:
-                intent = new Intent(this,QuizActivity.class);
+                intent = new Intent(this,MainActivity2.class);
                 break;
             case R.id.repo:
                 Uri webpage = Uri.parse("https://github.com/BSEF19M504/MobileComputingTask");
