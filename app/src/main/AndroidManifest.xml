@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MobileComputingTask">
         <activity
-            android:name=".QuizActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity1"
             android:exported="true">
             <intent-filter>
