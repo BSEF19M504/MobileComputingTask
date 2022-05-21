@@ -3,9 +3,13 @@ package com.example.mobilecomputingtask;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Random;
@@ -13,6 +17,12 @@ import java.util.Random;
 public class MainActivity2 extends AppCompatActivity {
 
     ImageView imageView, imageView1, imageView2;
+    RadioGroup r1,r2,r3;
+    RadioButton [] ques1;
+    RadioButton [] ques2;
+    RadioButton [] ques3;
+    Button submit;
+    TextView solution;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +34,30 @@ public class MainActivity2 extends AppCompatActivity {
         imageView = findViewById(R.id.imageView);
         imageView1 = findViewById(R.id.imageView1);
         imageView2 = findViewById(R.id.imageView2);
+
+        r1 = findViewById(R.id.q1);
+        r2 = findViewById(R.id.q2);
+        r3 = findViewById(R.id.q3);
+
+        ques1 = new RadioButton[3];
+        ques2 = new RadioButton[3];
+        ques3 = new RadioButton[3];
+
+        ques1[0] = findViewById(R.id.q1op1);
+        ques1[1] = findViewById(R.id.q1op2);
+        ques1[2] = findViewById(R.id.q1op3);
+
+        ques2[0] = findViewById(R.id.q2op1);
+        ques2[1] = findViewById(R.id.q2op2);
+        ques2[2] = findViewById(R.id.q2op3);
+
+        ques3[0] = findViewById(R.id.q3op1);
+        ques3[1] = findViewById(R.id.q3op2);
+        ques3[2] = findViewById(R.id.q3op3);
+
+        submit = findViewById(R.id.submit);
+
+        solution = findViewById(R.id.solution);
 
         int [] img1 = new int[26];
         int [] img2 = new int[26];
@@ -137,145 +171,83 @@ public class MainActivity2 extends AppCompatActivity {
             imageView.setImageResource(img1[alphabet-97]);
             imageView1.setImageResource(img2[alphabet-97]);
             imageView2.setImageResource(img3[alphabet-97]);
+            r1.setVisibility(View.GONE);
+            r2.setVisibility(View.GONE);
+            r3.setVisibility(View.GONE);
+            submit.setVisibility(View.GONE);
+
         }
         else if (alphabet == '-'){
             Random rand = new Random();
-            int q1 = rand.nextInt(26);
-            int q2 = rand.nextInt(26);
-            int q3 = rand.nextInt(26);
+            for(int i = 0; i<3; i++){
+                int ind1 = rand.nextInt(26) +97;
+                int ind2 = rand.nextInt(26) +97;
+                int ind3 = rand.nextInt(26) +97;
+
+                if(ind1 == ind2 || ind1 == ind3 || ind2 == ind3){
+                    i--;
+                    continue;
+                }
+
+                String one = Character.toString((char)ind1);
+                String two = Character.toString((char)ind2);
+                String three = Character.toString((char)ind3);
+
+                ques1[i].setText(one.toUpperCase());
+                ques2[i].setText(two.toUpperCase());
+                ques3[i].setText(three.toUpperCase());
+            }
+            int q1 = rand.nextInt(3);
+            int q2 = rand.nextInt(3);
+            int q3 = rand.nextInt(3);
+
+            submit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (submit.getText().toString().equals("Back")) {
+                        finish();
+                    }
+                    else {
+                        if (r1.getCheckedRadioButtonId() == -1 || r2.getCheckedRadioButtonId() == -1 || r3.getCheckedRadioButtonId() == -1){
+                            Toast.makeText(MainActivity2.this, "Please Select All Options", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+
+                        submit.setText("Back");
+
+                        RadioButton a1 = findViewById(r1.getCheckedRadioButtonId());
+                        RadioButton a2 = findViewById(r2.getCheckedRadioButtonId());
+                        RadioButton a3 = findViewById(r3.getCheckedRadioButtonId());
+
+                        char op1 = a1.getText().toString().toLowerCase().charAt(0);
+                        char op2 = a2.getText().toString().toLowerCase().charAt(0);
+                        char op3 = a3.getText().toString().toLowerCase().charAt(0);
+
+                        String answer = "";
+                        char ans1 = ques1[q1].getText().toString().toLowerCase().charAt(0);
+                        char ans2 = ques2[q2].getText().toString().toLowerCase().charAt(0);
+                        char ans3 = ques3[q3].getText().toString().toLowerCase().charAt(0);
+
+                        if (op1 == ans1)
+                            answer += "Q1. You chose the correct answer '" + op1 + "'\n";
+                        else
+                            answer += "Q1. You chose the wrong answer '" + op1 + "', the correct answer is '" + ans1 + "'\n";
+                        if (op2 == ans2)
+                            answer += "Q2. You chose the correct answer '" + op2 + "'\n";
+                        else
+                            answer += "Q2. You chose the wrong answer '" + op2 + "', the correct answer is '" + ans2 + "'\n";
+                        if (op3 == ans3)
+                            answer += "Q3. You chose the correct answer '" + op3 + "'\n";
+                        else
+                            answer += "Q3. You chose the wrong answer '" + op3 + "', the correct answer is '" + ans3 + "'\n";
+                        solution.setText(answer);
+                    }
+                }
+            });
+            imageView.setImageResource(img1[ques1[q1].getText().toString().toLowerCase().charAt(0) - 97]);
+            imageView1.setImageResource(img2[ques2[q2].getText().toString().toLowerCase().charAt(0) - 97]);
+            imageView2.setImageResource(img3[ques3[q3].getText().toString().toLowerCase().charAt(0) - 97]);
         }
-        /*switch (alphabet){
-            case 'a':
-                imageView.setImageResource(img1[0]);
-                imageView1.setImageResource(R.drawable.a2);
-                imageView2.setImageResource(R.drawable.a3);
-                break;
-            case 'b':
-                imageView.setImageResource(R.drawable.b1);
-                imageView1.setImageResource(R.drawable.b2);
-                imageView2.setImageResource(R.drawable.b3);
-                break;
-            case 'c':
-                imageView.setImageResource(R.drawable.c1);
-                imageView1.setImageResource(R.drawable.c2);
-                imageView2.setImageResource(R.drawable.c3);
-                break;
-            case 'd':
-                imageView.setImageResource(R.drawable.d1);
-                imageView1.setImageResource(R.drawable.d2);
-                imageView2.setImageResource(R.drawable.d3);
-                break;
-            case 'e':
-                imageView.setImageResource(R.drawable.e1);
-                imageView1.setImageResource(R.drawable.e2);
-                imageView2.setImageResource(R.drawable.e3);
-                break;
-            case 'f':
-                imageView.setImageResource(R.drawable.f1);
-                imageView1.setImageResource(R.drawable.f2);
-                imageView2.setImageResource(R.drawable.f3);
-                break;
-            case 'g':
-                imageView.setImageResource(R.drawable.g1);
-                imageView1.setImageResource(R.drawable.g2);
-                imageView2.setImageResource(R.drawable.g3);
-                break;
-            case 'h':
-                imageView.setImageResource(R.drawable.h1);
-                imageView1.setImageResource(R.drawable.h2);
-                imageView2.setImageResource(R.drawable.h3);
-                break;
-            case 'i':
-                imageView.setImageResource(R.drawable.i1);
-                imageView1.setImageResource(R.drawable.i2);
-                imageView2.setImageResource(R.drawable.i3);
-                break;
-            case 'j':
-                imageView.setImageResource(R.drawable.j1);
-                imageView1.setImageResource(R.drawable.j2);
-                imageView2.setImageResource(R.drawable.j3);
-                break;
-            case 'k':
-                imageView.setImageResource(R.drawable.k1);
-                imageView1.setImageResource(R.drawable.k2);
-                imageView2.setImageResource(R.drawable.k3);
-                break;
-            case 'l':
-                imageView.setImageResource(R.drawable.l1);
-                imageView1.setImageResource(R.drawable.l2);
-                imageView2.setImageResource(R.drawable.l3);
-                break;
-            case 'm':
-                imageView.setImageResource(R.drawable.m1);
-                imageView1.setImageResource(R.drawable.m2);
-                imageView2.setImageResource(R.drawable.m3);
-                break;
-            case 'n':
-                imageView.setImageResource(R.drawable.n1);
-                imageView1.setImageResource(R.drawable.n2);
-                imageView2.setImageResource(R.drawable.n3);
-                break;
-            case 'o':
-                imageView.setImageResource(R.drawable.o1);
-                imageView1.setImageResource(R.drawable.o2);
-                imageView2.setImageResource(R.drawable.o3);
-                break;
-            case 'p':
-                imageView.setImageResource(R.drawable.p1);
-                imageView1.setImageResource(R.drawable.p2);
-                imageView2.setImageResource(R.drawable.p3);
-                break;
-            case 'q':
-                imageView.setImageResource(R.drawable.q1);
-                imageView1.setImageResource(R.drawable.q2);
-                imageView2.setImageResource(R.drawable.q3);
-                break;
-            case 'r':
-                imageView.setImageResource(R.drawable.r1);
-                imageView1.setImageResource(R.drawable.r2);
-                imageView2.setImageResource(R.drawable.r3);
-                break;
-            case 's':
-                imageView.setImageResource(R.drawable.s1);
-                imageView1.setImageResource(R.drawable.s2);
-                imageView2.setImageResource(R.drawable.s3);
-                break;
-            case 't':
-                imageView.setImageResource(R.drawable.t1);
-                imageView1.setImageResource(R.drawable.t2);
-                imageView2.setImageResource(R.drawable.t3);
-                break;
-            case 'u':
-                imageView.setImageResource(R.drawable.u1);
-                imageView1.setImageResource(R.drawable.u2);
-                imageView2.setImageResource(R.drawable.u3);
-                break;
-            case 'v':
-                imageView.setImageResource(R.drawable.v1);
-                imageView1.setImageResource(R.drawable.v2);
-                imageView2.setImageResource(R.drawable.v3);
-                break;
-            case 'w':
-                imageView.setImageResource(R.drawable.w1);
-                imageView1.setImageResource(R.drawable.w2);
-                imageView2.setImageResource(R.drawable.w3);
-                break;
-            case 'x':
-                imageView.setImageResource(R.drawable.x1);
-                imageView1.setImageResource(R.drawable.x2);
-                imageView2.setImageResource(R.drawable.x3);
-                break;
-            case 'y':
-                imageView.setImageResource(R.drawable.y1);
-                imageView1.setImageResource(R.drawable.y2);
-                imageView2.setImageResource(R.drawable.y3);
-                break;
-            case 'z':
-                imageView.setImageResource(R.drawable.z1);
-                imageView1.setImageResource(R.drawable.z2);
-                imageView2.setImageResource(R.drawable.z3);
-                break;
-        }*/
 
     }
 }
