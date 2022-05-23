@@ -16,23 +16,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:weightSum="10">
+            app:layout_constraintTop_toTopOf="parent">
 
             <Button
                 android:id="@+id/button"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
-                android:text="A"
                 android:layout_weight="1"
+                android:text="A"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
                 android:id="@+id/button2"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
@@ -43,7 +42,7 @@
 
             <Button
                 android:id="@+id/button3"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
@@ -54,9 +53,10 @@
 
             <Button
                 android:id="@+id/button4"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
                 android:layout_marginTop="24dp"
                 android:layout_weight="1"
                 android:text="D"
@@ -70,12 +70,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll1"
-            android:weightSum="10">
+            app:layout_constraintTop_toBottomOf="@+id/ll1">
 
             <Button
                 android:id="@+id/button5"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
@@ -86,7 +85,7 @@
 
             <Button
                 android:id="@+id/button6"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
@@ -97,7 +96,7 @@
 
             <Button
                 android:id="@+id/button7"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
@@ -108,9 +107,10 @@
 
             <Button
                 android:id="@+id/button8"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
                 android:layout_marginTop="24dp"
                 android:text="H"
                 android:layout_weight="1"
@@ -124,12 +124,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll2"
-            android:weightSum="10">
+            app:layout_constraintTop_toBottomOf="@+id/ll2">
 
             <Button
                 android:id="@+id/button9"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
@@ -140,7 +139,7 @@
 
             <Button
                 android:id="@+id/button10"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
@@ -151,7 +150,7 @@
 
             <Button
                 android:id="@+id/button11"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
@@ -162,9 +161,10 @@
 
             <Button
                 android:id="@+id/button12"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
                 android:layout_marginTop="24dp"
                 android:text="L"
                 android:layout_weight="1"
@@ -178,12 +178,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll3"
-            android:weightSum="10">
+            app:layout_constraintTop_toBottomOf="@+id/ll3">
 
             <Button
                 android:id="@+id/button13"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
@@ -194,7 +193,7 @@
 
             <Button
                 android:id="@+id/button14"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
@@ -205,7 +204,7 @@
 
             <Button
                 android:id="@+id/button15"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
@@ -216,9 +215,10 @@
 
             <Button
                 android:id="@+id/button16"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
                 android:layout_marginTop="24dp"
                 android:text="P"
                 android:layout_weight="1"
@@ -232,12 +232,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll4"
-            android:weightSum="10">
+            app:layout_constraintTop_toBottomOf="@+id/ll4">
 
             <Button
                 android:id="@+id/button17"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
@@ -248,7 +247,7 @@
 
             <Button
                 android:id="@+id/button18"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
@@ -259,7 +258,7 @@
 
             <Button
                 android:id="@+id/button19"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
@@ -270,9 +269,10 @@
 
             <Button
                 android:id="@+id/button20"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
                 android:layout_marginTop="24dp"
                 android:text="T"
                 android:layout_weight="1"
@@ -286,12 +286,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll5"
-            android:weightSum="10">
+            app:layout_constraintTop_toBottomOf="@+id/ll5">
 
             <Button
                 android:id="@+id/button21"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
@@ -302,7 +301,7 @@
 
             <Button
                 android:id="@+id/button22"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
@@ -313,7 +312,7 @@
 
             <Button
                 android:id="@+id/button23"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
@@ -324,9 +323,10 @@
 
             <Button
                 android:id="@+id/button24"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
                 android:layout_marginTop="24dp"
                 android:text="X"
                 android:layout_weight="1"
@@ -340,12 +340,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll6"
-            android:weightSum="10">
+            app:layout_constraintTop_toBottomOf="@+id/ll6">
 
             <Button
                 android:visibility="invisible"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
@@ -356,7 +355,7 @@
 
             <Button
                 android:id="@+id/button25"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
@@ -367,7 +366,7 @@
 
             <Button
                 android:id="@+id/button26"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
@@ -378,9 +377,10 @@
 
             <Button
                 android:visibility="invisible"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
                 android:layout_marginTop="24dp"
                 android:text=""
                 android:layout_weight="1"
