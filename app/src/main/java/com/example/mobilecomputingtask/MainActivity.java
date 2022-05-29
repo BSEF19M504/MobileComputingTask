@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -29,11 +30,18 @@ public class MainActivity extends AppCompatActivity {
 
         ListView listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                onClick(alphabets.get(i));
+            }
+        });
     }
 
-    public void onClick(View view) {
+    public void onClick(String view) {
         Intent intent = new Intent(this,MainActivity2.class);
-
+        intent.putExtra("char",view.toLowerCase());
         startActivity(intent);
     }
 }
