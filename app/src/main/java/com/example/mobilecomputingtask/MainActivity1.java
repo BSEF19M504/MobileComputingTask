@@ -10,7 +10,7 @@ import android.widget.Button;
 
 public class MainActivity1 extends AppCompatActivity implements View.OnClickListener {
 
-    Button lesson,quiz,repo;
+    Button lesson,quiz,repo,old;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,10 +19,12 @@ public class MainActivity1 extends AppCompatActivity implements View.OnClickList
         lesson = findViewById(R.id.lesson);
         quiz = findViewById(R.id.quiz);
         repo = findViewById(R.id.repo);
+        old = findViewById(R.id.old);
 
         lesson.setOnClickListener(this);
         quiz.setOnClickListener(this);
         repo.setOnClickListener(this);
+        old.setOnClickListener(this);
     }
 
     @Override
@@ -38,6 +40,9 @@ public class MainActivity1 extends AppCompatActivity implements View.OnClickList
             case R.id.repo:
                 Uri webpage = Uri.parse("https://github.com/BSEF19M504/MobileComputingTask");
                 intent = new Intent(Intent.ACTION_VIEW, webpage);
+                break;
+            case R.id.old:
+                intent = new Intent(this,OldActivity.class);
                 break;
         }
         startActivity(intent);
