@@ -33,7 +33,7 @@ public class IntroActivity extends AppCompatActivity implements View.OnClickList
                 intent = new Intent(this, OldIntroActivity.class);
                 break;
             case R.id.new_layout:
-                intent = new Intent(this, OldQuizAnswerActivity.class);
+                intent = new Intent(this, NewIntroActivity.class);
                 break;
             case R.id.repo:
                 Uri webpage = Uri.parse("https://github.com/BSEF19M504/MobileComputingTask");
