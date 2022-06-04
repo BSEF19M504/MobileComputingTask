@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import java.util.Random;
 
-public class MainActivity2 extends AppCompatActivity {
+public class OldQuizAnswerActivity extends AppCompatActivity {
 
     ImageView imageView, imageView1, imageView2;
     RadioGroup r1,r2,r3;
@@ -26,7 +26,7 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_old_quiz_answer);
         Intent intent = getIntent();
         String entry = intent.getStringExtra("char");
         char alphabet = entry==null?'-':entry.charAt(0);
@@ -209,7 +209,7 @@ public class MainActivity2 extends AppCompatActivity {
                     }
                     else {
                         if (r1.getCheckedRadioButtonId() == -1 || r2.getCheckedRadioButtonId() == -1 || r3.getCheckedRadioButtonId() == -1){
-                            Toast.makeText(MainActivity2.this, "Please Select All Options", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(OldQuizAnswerActivity.this, "Please Select All Options", Toast.LENGTH_SHORT).show();
                             return;
                         }
 

@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MobileComputingTask">
         <activity
-            android:name=".OldActivity"
+            android:name=".OldLessonsActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity1"
+            android:name=".OldIntroActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,10 +22,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity2"
+            android:name=".OldQuizAnswerActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".NewLessonsActivity"
             android:exported="true" />
     </application>
 

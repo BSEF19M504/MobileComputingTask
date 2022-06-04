@@ -11,14 +11,14 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class NewLessonsActivity extends AppCompatActivity {
 
     ArrayList<String> alphabets;
     ArrayAdapter<String> adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_new_lessons);
 
         alphabets = new ArrayList<String>(26);
 
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(String view) {
-        Intent intent = new Intent(this,MainActivity2.class);
+        Intent intent = new Intent(this, OldQuizAnswerActivity.class);
         intent.putExtra("char",view.toLowerCase());
         startActivity(intent);
     }

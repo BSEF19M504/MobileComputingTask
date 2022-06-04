@@ -1,12 +1,12 @@
 package com.example.mobilecomputingtask;
 
-public class UserData {
+public class QuizUnit {
     public int imgId;
     public String name;
-    public UserData(int i, String s){
+    public QuizUnit(int i, String s){
         imgId = i;
         name = s;
     }
-    public UserData(){
+    public QuizUnit(){
     }
 }

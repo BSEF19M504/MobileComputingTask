@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,7 +13,7 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 
 public class MyAdapter extends ArrayAdapter {
-    public MyAdapter(@NonNull Context context, int resource, @NonNull ArrayList<UserData> objects) {
+    public MyAdapter(@NonNull Context context, int resource, @NonNull ArrayList<QuizUnit> objects) {
         super(context, resource, objects);
 
     }
@@ -22,7 +21,7 @@ public class MyAdapter extends ArrayAdapter {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        UserData usd = (UserData) getItem(position);
+        QuizUnit usd = (QuizUnit) getItem(position);
         convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_view,parent);
 
         TextView textView = convertView.findViewById(R.id.t1);

@@ -7,13 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class OldActivity extends AppCompatActivity implements View.OnClickListener{
+public class OldLessonsActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button []alphabets;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_old);
+        setContentView(R.layout.activity_old_lessons);
 
         alphabets = new Button[26];
 
@@ -52,7 +52,7 @@ public class OldActivity extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onClick(View view) {
-        Intent intent = new Intent(this,MainActivity2.class);
+        Intent intent = new Intent(this, OldQuizAnswerActivity.class);
         switch (view.getId()){
             case R.id.button:
                 intent.putExtra("char","a");
