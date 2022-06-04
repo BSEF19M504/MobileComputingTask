@@ -50,9 +50,9 @@ public class MyAdapter extends ArrayAdapter {
             r1.setChecked(isChecked1[position]);
             r2.setChecked(isChecked2[position]);
             r3.setChecked(isChecked3[position]);
-            r1.setText(Character.toString(usd.op1));
-            r2.setText(Character.toString(usd.op2));
-            r3.setText(Character.toString(usd.op3));
+            r1.setText(Character.toString(usd.op1).toUpperCase());
+            r2.setText(Character.toString(usd.op2).toUpperCase());
+            r3.setText(Character.toString(usd.op3).toUpperCase());
             r1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton compoundButton, boolean b) {

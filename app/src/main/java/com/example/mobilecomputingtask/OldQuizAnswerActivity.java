@@ -184,11 +184,10 @@ public class OldQuizAnswerActivity extends AppCompatActivity {
                 int ind2 = rand.nextInt(26) +97;
                 int ind3 = rand.nextInt(26) +97;
 
-                if(ind1 == ind2 || ind1 == ind3 || ind2 == ind3){
+                if (ind1 == ind2 || ind1 == ind3 || ind2 == ind3) {
                     i--;
                     continue;
                 }
-
                 String one = Character.toString((char)ind1);
                 String two = Character.toString((char)ind2);
                 String three = Character.toString((char)ind3);
@@ -229,17 +228,17 @@ public class OldQuizAnswerActivity extends AppCompatActivity {
                         char ans3 = ques3[q3].getText().toString().toLowerCase().charAt(0);
 
                         if (op1 == ans1)
-                            answer += "Q1. You chose the correct answer '" + op1 + "'\n";
+                            answer += "Q1. You chose the correct answer '" + (char)(op1-32) + "'\n";
                         else
-                            answer += "Q1. You chose the wrong answer '" + op1 + "', the correct answer is '" + ans1 + "'\n";
+                            answer += "Q1. You chose the wrong answer '" + (char)(op1-32) + "', the correct answer is '" + (char)(ans1-32) + "'\n";
                         if (op2 == ans2)
-                            answer += "Q2. You chose the correct answer '" + op2 + "'\n";
+                            answer += "Q2. You chose the correct answer '" + (char)(op2-32) + "'\n";
                         else
-                            answer += "Q2. You chose the wrong answer '" + op2 + "', the correct answer is '" + ans2 + "'\n";
+                            answer += "Q2. You chose the wrong answer '" + (char)(op2-32) + "', the correct answer is '" + (char)(ans2-32) + "'\n";
                         if (op3 == ans3)
-                            answer += "Q3. You chose the correct answer '" + op3 + "'\n";
+                            answer += "Q3. You chose the correct answer '" + (char)(op3-32) + "'\n";
                         else
-                            answer += "Q3. You chose the wrong answer '" + op3 + "', the correct answer is '" + ans3 + "'\n";
+                            answer += "Q3. You chose the wrong answer '" + (char)(op3-32) + "', the correct answer is '" + (char)(ans3-32) + "'\n";
                         solution.setText(answer);
                     }
                 }

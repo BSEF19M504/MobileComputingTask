@@ -166,21 +166,21 @@ public class NewQuizAnswerActivity extends AppCompatActivity {
                 int ind2 = rand.nextInt(26) + 97;
                 int ind3 = rand.nextInt(26) + 97;
 
-                if (ind1 == ind2 || ind1 == ind3 || ind2 == ind3) {
-                    i--;
-                    continue;
+                if (ind1 != ind2 && ind1 != ind3 && ind2 != ind3) {
+                    ques1[i] = (char)ind1;
+                    ques2[i] = (char)ind2;
+                    ques3[i] = (char)ind3;
                 }
-
-                ques1[i] = (char)ind1;
-                ques2[i] = (char)ind2;
-                ques3[i] = (char)ind3;
+                else{
+                    i--;
+                }
             }
             int q1 = rand.nextInt(3);
             int q2 = rand.nextInt(3);
             int q3 = rand.nextInt(3);
             alphabets.add(new QuizUnit(img1[ques1[q1] - 97],ques1,(char)q1));
-            alphabets.add(new QuizUnit(img1[ques2[q2] - 97],ques2,(char)q2));
-            alphabets.add(new QuizUnit(img1[ques3[q3] - 97],ques3,(char)q3));
+            alphabets.add(new QuizUnit(img2[ques2[q2] - 97],ques2,(char)q2));
+            alphabets.add(new QuizUnit(img3[ques3[q3] - 97],ques3,(char)q3));
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -213,17 +213,17 @@ public class NewQuizAnswerActivity extends AppCompatActivity {
                         char ans3 = ques3[q3];
 
                         if (op1 == ans1)
-                            answer += "Q1. You chose the correct answer '" + op1 + "'\n";
+                            answer += "Q1. You chose the correct answer '" + (char)(op1-32) + "'\n";
                         else
-                            answer += "Q1. You chose the wrong answer '" + op1 + "', the correct answer is '" + ans1 + "'\n";
+                            answer += "Q1. You chose the wrong answer '" + (char)(op1-32) + "', the correct answer is '" + (char)(ans1-32) + "'\n";
                         if (op2 == ans2)
-                            answer += "Q2. You chose the correct answer '" + op2 + "'\n";
+                            answer += "Q2. You chose the correct answer '" + (char)(op2-32) + "'\n";
                         else
-                            answer += "Q2. You chose the wrong answer '" + op2 + "', the correct answer is '" + ans2 + "'\n";
+                            answer += "Q2. You chose the wrong answer '" + (char)(op2-32) + "', the correct answer is '" + (char)(ans2-32) + "'\n";
                         if (op3 == ans3)
-                            answer += "Q3. You chose the correct answer '" + op3 + "'\n";
+                            answer += "Q3. You chose the correct answer '" + (char)(op3-32) + "'\n";
                         else
-                            answer += "Q3. You chose the wrong answer '" + op3 + "', the correct answer is '" + ans3 + "'\n";
+                            answer += "Q3. You chose the wrong answer '" + (char)(op3-32) + "', the correct answer is '" + (char)(ans3-32) + "'\n";
                         solution.setText(answer);
                     }
                 }
