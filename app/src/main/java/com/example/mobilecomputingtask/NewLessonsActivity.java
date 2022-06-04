@@ -40,8 +40,8 @@ public class NewLessonsActivity extends AppCompatActivity {
     }
 
     public void onClick(String view) {
-        Intent intent = new Intent(this, OldQuizAnswerActivity.class);
-        intent.putExtra("char",view.toLowerCase());
+        Intent intent = new Intent(this, NewQuizAnswerActivity.class);
+        intent.putExtra("char",view.toLowerCase().charAt(0));
         startActivity(intent);
     }
 }

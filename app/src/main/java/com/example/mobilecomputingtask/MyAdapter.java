@@ -27,7 +27,7 @@ public class MyAdapter extends ArrayAdapter {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         QuizUnit usd = (QuizUnit) getItem(position);
-        convertView = LayoutInflater.from(getContext()).inflate(R.layout.quiz_view,parent);
+        convertView = LayoutInflater.from(getContext()).inflate(R.layout.quiz_view,null,true);
 
         ImageView img1 = convertView.findViewById(R.id.imageTemp);
         RadioGroup rgr = convertView.findViewById(R.id.radioGroup);
@@ -36,13 +36,14 @@ public class MyAdapter extends ArrayAdapter {
         RadioButton r3 = convertView.findViewById(R.id.radioButton3);
 
         img1.setImageResource(usd.imageId);
-        r1.setText(Character.toString(usd.op1));
-        r2.setText(Character.toString(usd.op2));
-        r3.setText(Character.toString(usd.op3));
         if(!quiz){
             rgr.setVisibility(View.GONE);
         }
-
+        else{
+            r1.setText(Character.toString(usd.op1));
+            r2.setText(Character.toString(usd.op2));
+            r3.setText(Character.toString(usd.op3));
+        }
 
         return convertView;
     }

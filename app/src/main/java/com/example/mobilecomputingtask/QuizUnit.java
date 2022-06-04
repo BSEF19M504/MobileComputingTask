@@ -13,6 +13,18 @@ public class QuizUnit {
         op2 = o2;
         op3 = o3;
     }
+    public QuizUnit(int i){
+        imageId = i;
+        name = null;
+        op1 = 0;
+        op2 = 0;
+        op3 = 0;
+    }
     public QuizUnit(){
+        imageId = 0;
+        name = null;
+        op1 = 0;
+        op2 = 0;
+        op3 = 0;
     }
 }
