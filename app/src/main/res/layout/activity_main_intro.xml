@@ -6,12 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".MainIntroActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Muhammad Nauman Sheikh\nBSEF19M504"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/old_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Old Layout"
-        app:layout_constraintVertical_bias="0.25"
+        app:layout_constraintVertical_bias="0.4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Layout"
-        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintVertical_bias="0.6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,7 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Repository"
-        app:layout_constraintVertical_bias="0.75"
+        app:layout_constraintVertical_bias="0.8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
