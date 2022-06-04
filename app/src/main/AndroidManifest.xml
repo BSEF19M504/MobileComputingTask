@@ -13,10 +13,7 @@
             android:name=".NewQuizAnswerActivity"
             android:exported="false" />
         <activity
-            android:name=".NewIntroActivity"
-            android:exported="false" />
-        <activity
-            android:name=".IntroActivity"
+            android:name=".MainIntroActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,14 +25,8 @@
             android:name=".OldLessonsActivity"
             android:exported="false" />
         <activity
-            android:name=".OldIntroActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:name=".ChoiceIntroActivity"
+            android:exported="true"/>
         <activity
             android:name=".OldQuizAnswerActivity"
             android:exported="false" />

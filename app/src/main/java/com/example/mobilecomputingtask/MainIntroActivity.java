@@ -8,13 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class IntroActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainIntroActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button oldApp,newApp,repo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_intro);
+        setContentView(R.layout.activity_main_intro);
 
         oldApp = findViewById(R.id.old_layout);
         newApp = findViewById(R.id.new_layout);
@@ -27,13 +27,13 @@ public class IntroActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View view) {
-        Intent intent = null;
+        Intent intent = new Intent(this, ChoiceIntroActivity.class);
         switch (view.getId()){
             case R.id.old_layout:
-                intent = new Intent(this, OldIntroActivity.class);
+                intent.putExtra("choice","old");
                 break;
             case R.id.new_layout:
-                intent = new Intent(this, NewIntroActivity.class);
+                intent.putExtra("choice","new");
                 break;
             case R.id.repo:
                 Uri webpage = Uri.parse("https://github.com/BSEF19M504/MobileComputingTask");
