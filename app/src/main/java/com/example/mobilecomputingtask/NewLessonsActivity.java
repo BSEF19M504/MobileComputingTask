@@ -26,7 +26,7 @@ public class NewLessonsActivity extends AppCompatActivity {
             alphabets.add(Character.toString((char)(i+65)));
         }
 
-        adapter = new ArrayAdapter<String>(this,R.layout.list_view,R.id.t1,alphabets);
+        adapter = new ArrayAdapter<String>(this,R.layout.lessons_view,R.id.t1,alphabets);
 
         ListView listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(adapter);

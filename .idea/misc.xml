@@ -5,18 +5,22 @@
       <map>
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2845" />
         <entry key="app/src/main/res/layout-land/activity_main.xml" value="0.3014121800529568" />
+        <entry key="app/src/main/res/layout/activity_choice_intro.xml" value="0.29200513039760584" />
         <entry key="app/src/main/res/layout/activity_intro.xml" value="0.29200513039760584" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17930327868852458" />
         <entry key="app/src/main/res/layout/activity_main1.xml" value="0.29200513039760584" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.1496365968362548" />
         <entry key="app/src/main/res/layout/activity_main_intro.xml" value="0.25249320036264733" />
         <entry key="app/src/main/res/layout/activity_new_intro.xml" value="0.29200513039760584" />
+        <entry key="app/src/main/res/layout/activity_new_lessons.xml" value="0.29200513039760584" />
         <entry key="app/src/main/res/layout/activity_new_quiz_answer.xml" value="0.29200513039760584" />
         <entry key="app/src/main/res/layout/activity_old.xml" value="0.29200513039760584" />
         <entry key="app/src/main/res/layout/activity_quiz.xml" value="0.29200513039760584" />
         <entry key="app/src/main/res/layout/calculator.xml" value="0.29200513039760584" />
+        <entry key="app/src/main/res/layout/lessons_view.xml" value="0.29200513039760584" />
         <entry key="app/src/main/res/layout/list_view.xml" value="0.29200513039760584" />
         <entry key="app/src/main/res/layout/login.xml" value="0.29200513039760584" />
+        <entry key="app/src/main/res/layout/quiz_view.xml" value="0.2911500641299701" />
       </map>
     </option>
   </component>
