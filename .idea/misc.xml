@@ -15,6 +15,8 @@
         <entry key="app/src/main/res/layout/activity_new_lessons.xml" value="0.29200513039760584" />
         <entry key="app/src/main/res/layout/activity_new_quiz_answer.xml" value="0.29200513039760584" />
         <entry key="app/src/main/res/layout/activity_old.xml" value="0.29200513039760584" />
+        <entry key="app/src/main/res/layout/activity_old_lessons.xml" value="0.1496365968362548" />
+        <entry key="app/src/main/res/layout/activity_old_quiz_answer.xml" value="0.1496365968362548" />
         <entry key="app/src/main/res/layout/activity_quiz.xml" value="0.29200513039760584" />
         <entry key="app/src/main/res/layout/calculator.xml" value="0.29200513039760584" />
         <entry key="app/src/main/res/layout/lessons_view.xml" value="0.29200513039760584" />

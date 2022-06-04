@@ -13,22 +13,27 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-public class NewQuizAnswerActivity extends AppCompatActivity implements View.OnClickListener {
+public class NewQuizAnswerActivity extends AppCompatActivity {
 
     char [] ques1,ques2,ques3;
     ArrayList<QuizUnit> alphabets;
     MyAdapter adapter;
     Button button;
+    TextView solution;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_quiz_answer);
 
+        solution = findViewById(R.id.solution);
         ques1 = new char[3];
         ques2 = new char[3];
         ques3 = new char[3];
@@ -146,7 +151,6 @@ public class NewQuizAnswerActivity extends AppCompatActivity implements View.OnC
         char mode = getIntent().getCharExtra("char",'-');
 
         button = findViewById(R.id.btn);
-        button.setOnClickListener(this);
 
         if(mode >= 'a' && mode <= 'z'){
             alphabets.add(new QuizUnit(img1[mode-97]));
@@ -177,6 +181,53 @@ public class NewQuizAnswerActivity extends AppCompatActivity implements View.OnC
             alphabets.add(new QuizUnit(img1[ques1[q1] - 97],ques1,(char)q1));
             alphabets.add(new QuizUnit(img1[ques2[q2] - 97],ques2,(char)q2));
             alphabets.add(new QuizUnit(img1[ques3[q3] - 97],ques3,(char)q3));
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (button.getText().toString().equals("Back")) {
+                        finish();
+                    }
+                    else
+                    {
+                        RadioGroup r1 = adapter.getView(0,null, null).findViewById(R.id.radioGroup);
+                        RadioGroup r2 = adapter.getView(1,null, null).findViewById(R.id.radioGroup);
+                        RadioGroup r3 = adapter.getView(2,null, null).findViewById(R.id.radioGroup);
+                        if (r1.getCheckedRadioButtonId() == -1 || r2.getCheckedRadioButtonId() == -1 || r3.getCheckedRadioButtonId() == -1){
+                            Toast.makeText(NewQuizAnswerActivity.this, "Please Select All Options", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+
+                        button.setText("Back");
+
+                        RadioButton a1 = adapter.getView(0,null, null).findViewById(r1.getCheckedRadioButtonId());
+                        RadioButton a2 = adapter.getView(1,null, null).findViewById(r2.getCheckedRadioButtonId());
+                        RadioButton a3 = adapter.getView(2,null, null).findViewById(r3.getCheckedRadioButtonId());
+
+                        char op1 = a1.getText().toString().toLowerCase().charAt(0);
+                        char op2 = a2.getText().toString().toLowerCase().charAt(0);
+                        char op3 = a3.getText().toString().toLowerCase().charAt(0);
+
+                        String answer = "";
+                        char ans1 = ques1[q1];
+                        char ans2 = ques2[q2];
+                        char ans3 = ques3[q3];
+
+                        if (op1 == ans1)
+                            answer += "Q1. You chose the correct answer '" + op1 + "'\n";
+                        else
+                            answer += "Q1. You chose the wrong answer '" + op1 + "', the correct answer is '" + ans1 + "'\n";
+                        if (op2 == ans2)
+                            answer += "Q2. You chose the correct answer '" + op2 + "'\n";
+                        else
+                            answer += "Q2. You chose the wrong answer '" + op2 + "', the correct answer is '" + ans2 + "'\n";
+                        if (op3 == ans3)
+                            answer += "Q3. You chose the correct answer '" + op3 + "'\n";
+                        else
+                            answer += "Q3. You chose the wrong answer '" + op3 + "', the correct answer is '" + ans3 + "'\n";
+                        solution.setText(answer);
+                    }
+                }
+            });
         }
 
         adapter = new MyAdapter(this,0,alphabets,mode=='-');
@@ -184,10 +235,6 @@ public class NewQuizAnswerActivity extends AppCompatActivity implements View.OnC
         ListView listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(adapter);
 
-
-    }
-
-    public void onClick(View view) {
 
     }
 }
