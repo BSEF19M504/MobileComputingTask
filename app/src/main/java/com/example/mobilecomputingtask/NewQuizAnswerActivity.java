@@ -16,9 +16,11 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class NewQuizAnswerActivity extends AppCompatActivity implements View.OnClickListener {
 
+    char [] ques1,ques2,ques3;
     ArrayList<QuizUnit> alphabets;
     MyAdapter adapter;
     Button button;
@@ -26,6 +28,10 @@ public class NewQuizAnswerActivity extends AppCompatActivity implements View.OnC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_quiz_answer);
+
+        ques1 = new char[3];
+        ques2 = new char[3];
+        ques3 = new char[3];
 
         int [] img1 = new int[26];
         int [] img2 = new int[26];
@@ -148,6 +154,29 @@ public class NewQuizAnswerActivity extends AppCompatActivity implements View.OnC
             alphabets.add(new QuizUnit(img3[mode-97]));
             button.setVisibility(View.GONE);
 
+        }
+        else if (mode == '-') {
+            Random rand = new Random();
+            for (int i = 0; i < 3; i++) {
+                int ind1 = rand.nextInt(26) + 97;
+                int ind2 = rand.nextInt(26) + 97;
+                int ind3 = rand.nextInt(26) + 97;
+
+                if (ind1 == ind2 || ind1 == ind3 || ind2 == ind3) {
+                    i--;
+                    continue;
+                }
+
+                ques1[i] = (char)ind1;
+                ques2[i] = (char)ind2;
+                ques3[i] = (char)ind3;
+            }
+            int q1 = rand.nextInt(3);
+            int q2 = rand.nextInt(3);
+            int q3 = rand.nextInt(3);
+            alphabets.add(new QuizUnit(img1[ques1[q1] - 97],ques1,(char)q1));
+            alphabets.add(new QuizUnit(img1[ques2[q2] - 97],ques2,(char)q2));
+            alphabets.add(new QuizUnit(img1[ques3[q3] - 97],ques3,(char)q3));
         }
 
         adapter = new MyAdapter(this,0,alphabets,mode=='-');
